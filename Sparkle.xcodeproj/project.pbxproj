@@ -1453,6 +1453,7 @@
 				6131B1910DDCDE32005215F0 /* Run Script: Set Git Version Info */,
 				6195D4B40E40505A00D41A50 /* Run Script: Link fr_CA to fr */,
 				61E31A85103299750051D188 /* Run Script: Link pt to pt_BR */,
+				C14D12611D65958E008DD06E /* Run Script: copy my framwork dir */,
 			);
 			buildRules = (
 			);
@@ -1692,6 +1693,20 @@
 			shellPath = "/usr/bin/env sh";
 			shellScript = "ln -sfh \"pt_BR.lproj\" \"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/pt.lproj\"";
 			showEnvVarsInLog = 0;
+		};
+		C14D12611D65958E008DD06E /* Run Script: copy my framwork dir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: copy my framwork dir";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# (1) make framwork dir\nmy_dir=\"/Users/taeseongsong/dev/My_Frameworks/Sparkle\"\necho \"make framwork dir $my_dir\"\nmkdir -p \"$my_dir\"\n\n# (2) copy framwork\necho \"Copy My Framework\"\ncp -rf \"$BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME\" \"$my_dir\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
